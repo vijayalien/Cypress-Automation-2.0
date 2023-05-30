@@ -21,4 +21,13 @@ describe("Inspect Automation Test Store using chain of commands", ()=>{
         
     })
 
+    it.only("Chaining using then command ", () =>{
+        cy.visit("https://automationteststore.com/")
+        cy.get('.prdocutname').contains('Skinsheen Bronzer Stick').click().then(function(itemHeaderText){
+            console.log("Selected the following item: "+itemHeaderText.text())
+
+        })
+        
+    })
+
 })
