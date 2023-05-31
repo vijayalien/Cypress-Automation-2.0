@@ -8,5 +8,4 @@ describe("Challenge 1 : Then command promise", ()=>{
         })    
     })
 
-
 })
