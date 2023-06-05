@@ -19,6 +19,12 @@ describe("Test contact us from via WebdriverUniversity", ()=>{
         cy.url().should('include','Login-Portal')
         cy.go('back')
 
+        //Challenge
+
+        cy.get("#to-do-list").invoke('removeAttr','target').click({force:true})
+        cy.url().should('include','To-Do-List')
+
+        cy.go('back')
     })
 
 
