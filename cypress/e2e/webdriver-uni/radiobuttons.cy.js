@@ -1,8 +1,8 @@
 
 
-describe("Handling checkboxes and radiobutton in webdriver uni page", ()=>{
+describe("Handling radiobutton in webdriver uni page", ()=>{
 
-    it("Able to handle checkbox", () =>{
+    it("Able to handle radiobuttons", () =>{
         cy.visit("http://www.webdriveruniversity.com")
         cy.get("#dropdown-checkboxes-radiobuttons").invoke('removeAttr','target').click({force:true}) 
         

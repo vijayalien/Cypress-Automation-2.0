@@ -21,7 +21,6 @@ describe("Handling iFrames & modal in webdriver uni page", ()=>{
 
         cy.get('@modal').contains('Close').click()
         
-        
     })
 
 
