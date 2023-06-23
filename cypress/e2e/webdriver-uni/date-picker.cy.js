@@ -24,7 +24,7 @@ describe("Date picker via webdriver uni", () => {
     it.only("Test Datepicker via webdriver Uni page method 2", () => {
         cy.get('.input-group-addon').click()
         var date = new Date()
-        date.setDate(date.getDate() + 300)
+        date.setDate(date.getDate() + 50)
 
         var futureDate = date.getDate()
         var futureMonth = date.toLocaleDateString("default", { month: "long" })
