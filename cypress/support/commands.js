@@ -37,6 +37,18 @@ Cypress.Commands.add("selectProduct", productNameNew =>{
     })
 })
 
+Cypress.Commands.add("addProductsToCart", productNameNew =>{
+    cy.get('.fixed .prdocutname').each(($el, index)=>{
+        const productName= $el.text()
+        if(productName === productNameNew){
+           cy.get('.productcart').eq(index).click()
+        }else{
+            cy.log("Finding product")
+        }
+        
+    })
+})
+
 
 Cypress.Commands.add("webdriverUni_contactUsForm", (firstname,lastname,email,feedback,$selector,finalText) =>{
     cy.get('[name="first_name"]').type(firstname)
