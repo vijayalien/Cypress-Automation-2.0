@@ -28,6 +28,10 @@ Cypress.Commands.add("navigateToWebdriverUniUrl",() =>{
     cy.visit("/")
 })
 
+Cypress.Commands.add("navigateToWebdriverUniCertainPage",$pageNameSelector =>{
+    cy.get($pageNameSelector).invoke('removeAttr','target').click({force:true}) 
+})
+
 
 Cypress.Commands.add("selectProduct", productNameNew =>{
     cy.get('.fixed .prdocutname').each(($el, index)=>{

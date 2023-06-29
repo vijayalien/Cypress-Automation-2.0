@@ -1,8 +1,12 @@
 describe("Handling Js Alerts", () => {
 
+    beforeEach(()=>{
+        cy.navigateToWebdriverUniUrl()
+        cy.navigateToWebdriverUniCertainPage('#popup-alerts')
+
+    })
+
     it("Confirms Js alerts contains the correct texts", () => {
-        cy.visit("http://www.webdriveruniversity.com")
-        cy.get("#popup-alerts").invoke('removeAttr', 'target').click({ force: true })
         cy.get('#button1').click()
 
         cy.on('window:alert', (str) => {
@@ -12,8 +16,6 @@ describe("Handling Js Alerts", () => {
     })
 
     it("Validate js confirm alert box works correctly when clicking OK", () => {
-        cy.visit("http://www.webdriveruniversity.com")
-        cy.get("#popup-alerts").invoke('removeAttr', 'target').click({ force: true })
         cy.get('#button4').click()
 
         cy.on('window:confirm', (str) => {
@@ -25,8 +27,6 @@ describe("Handling Js Alerts", () => {
     })
 
     it("Handling Modal popup", () => {
-        cy.visit("http://www.webdriveruniversity.com")
-        cy.get("#popup-alerts").invoke('removeAttr', 'target').click({ force: true })
         cy.get('#button2').click()
 
         cy.on('window:alert', (str) => {
@@ -37,8 +37,6 @@ describe("Handling Js Alerts", () => {
 
     //Challenge
     it("Validate js confirm alert box works correctly when clicking CANCEL", () => {
-        cy.visit("http://www.webdriveruniversity.com")
-        cy.get("#popup-alerts").invoke('removeAttr', 'target').click({ force: true })
         cy.get('#button4').click()
 
         cy.on('window:', (str) => {
@@ -50,10 +48,6 @@ describe("Handling Js Alerts", () => {
     })
 
     it("Validate js confirm alert box works correctly using stub", () => {
-        cy.visit("http://www.webdriveruniversity.com");
-
-        cy.get("#popup-alerts").invoke('removeAttr', 'target').click({ force: true });
-
         cy.window().then((win) => {
             const stub = cy.stub(win, 'confirm').returns(false);
 
@@ -65,10 +59,7 @@ describe("Handling Js Alerts", () => {
         });
     })
 
-    it.only('should validate AJAX loader and alert box', () => {
-        cy.visit('http://www.webdriveruniversity.com');
-
-        cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true });
+    it('should validate AJAX loader and alert box', () => {
         cy.get('#button3').click();  
       
         cy.intercept('GET', 'http://www.webdriveruniversity.com/Popup-Alerts/index.html').as('ajaxRequest'); // Replace 'your-ajax-url' with the actual AJAX URL

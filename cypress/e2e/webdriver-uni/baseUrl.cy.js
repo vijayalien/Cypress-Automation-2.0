@@ -4,7 +4,7 @@ describe("Handling checkboxes and radiobutton in webdriver uni page", ()=>{
 
     beforeEach("Before Each function",()=>{
         cy.navigateToWebdriverUniUrl()
-        cy.get("#dropdown-checkboxes-radiobuttons").invoke('removeAttr','target').click({force:true}) 
+        cy.navigateToWebdriverUniCertainPage('#dropdown-checkboxes-radiobuttons')//
 
     })
 
