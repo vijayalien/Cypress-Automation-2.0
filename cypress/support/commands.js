@@ -24,6 +24,11 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+Cypress.Commands.add("navigateToWebdriverUniUrl",() =>{
+    cy.visit("/")
+})
+
+
 Cypress.Commands.add("selectProduct", productNameNew =>{
     cy.get('.fixed .prdocutname').each(($el, index)=>{
         const productName= $el.text()
