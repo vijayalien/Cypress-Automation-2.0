@@ -12,6 +12,10 @@ class homePage_PO{
         cy.navigateToWebdriverUniCertainPage($selector)
     }
 
+    scrollIntoView($pageNameSelector){
+        cy.get($pageNameSelector).scrollIntoView()
+    }
+
 }
 
 export default homePage_PO
