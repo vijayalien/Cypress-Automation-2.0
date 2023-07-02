@@ -13,7 +13,7 @@ describe("To check if document have specific property", ()=>{
     })
 
     
-    it("Check if the url ofthe page", () =>{
+    it("Check if the url of the page", () =>{
         cy.visit("http://www.webdriveruniversity.com/Contact-Us/contactus.html")  
         cy.url().should('include',"Contact-Us/contactus.html")
         

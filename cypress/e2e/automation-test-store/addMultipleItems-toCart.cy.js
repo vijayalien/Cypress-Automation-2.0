@@ -1,6 +1,10 @@
 ///<reference types="Cypress" />
 
+import automationStore_HomePage_PO from "../../support/pageObjects/automation-test-store/automationStore_HomePage_PO"
+
+
 describe("Add multiple products to cart", ()=>{
+    const auomtationTestHomePage_PO = new automationStore_HomePage_PO()
 
     before(()=>{
         cy.fixture("products").then(function(data){
@@ -10,8 +14,8 @@ describe("Add multiple products to cart", ()=>{
     })
 
     beforeEach(()=>{
-        cy.visit("https://automationteststore.com/")
-        cy.get('a[href*="product/category&path"]').contains("Hair Care").click()
+        auomtationTestHomePage_PO.accessToUrl()
+        auomtationTestHomePage_PO.clickOnHairCare()
     })
 
     it("Adding specific items to basket", () =>{
