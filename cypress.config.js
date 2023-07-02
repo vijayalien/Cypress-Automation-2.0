@@ -12,7 +12,7 @@ module.exports = defineConfig({
     // },
   },
   env:{
-    webdriver_uniurl:"http://www.webdriveruniversity.com/Contact-Us/contactus.html",
+    webdriver_uniurl:"http://www.webdriveruniversity.com",
     first_name: "Cypress",
     last_name:"Automation",
     email:"cypressauto@test.com"

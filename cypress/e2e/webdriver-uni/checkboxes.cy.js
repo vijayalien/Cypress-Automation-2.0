@@ -1,10 +1,12 @@
-
+import homePage_PO from "../../support/pageObjects/webdrier-uni/homePage_PO"
 
 describe("Handling checkboxes and radiobutton in webdriver uni page", ()=>{
 
     beforeEach("Before Each function",()=>{
-        cy.visit("http://www.webdriveruniversity.com")
-        cy.get("#dropdown-checkboxes-radiobuttons").invoke('removeAttr','target').click({force:true}) 
+        const homepage_PO = new homePage_PO()
+        homepage_PO.visitHomePage()
+        homepage_PO.validateHomePage()
+        homepage_PO.clickOnCertainPage('#dropdown-checkboxes-radiobuttons')
 
     })
 

@@ -4,7 +4,7 @@ describe("Test contact us from via WebdriverUniversity", ()=>{
 
     beforeEach(()=>{
         cy.navigateToWebdriverUniUrl()
-        cy.navigateToWebdriverUniCertainPage('#contact-us')//
+        cy.navigateToWebdriverUniCertainPage('#contact-us')
 
     })
 
