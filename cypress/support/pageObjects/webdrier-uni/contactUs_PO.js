@@ -29,7 +29,8 @@ class contactUs_PO {
         cy.get('[name="email"]').type(email)
         cy.get('textarea.feedback-input').type(feedback)
         cy.get('[type="submit"]').click()
-        cy.get($selector).contains(finalText,{timeout:70000})
+        cy.get($selector).contains(finalText,{timeout:30000})
+        cy.screenshot()
     }
 
 }
