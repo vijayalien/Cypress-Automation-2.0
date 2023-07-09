@@ -7,6 +7,7 @@ module.exports = defineConfig({
     defaultCommandTimeout: 3000,
     pageLoadTimeout : 30000,
     videoUploadOnPasses : false,
+    projectId: "7r1w25",
     // setupNodeEvents(on, config) {
     //   // implement node event listeners here
       

@@ -4,7 +4,12 @@
   "description": "Cypress automation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "triggerAllTests-headless":"npx cypress run",
+    "triggerAllTests-headed": "npx cypress run --headed",
+    "triggerAllTests-chrome": "npx cypress run --browser chrome",
+    "triggerAllTests-dashboard":"npx cypress run --record --key 80b17d0f-3b2c-471d-8a73-6dc7dc44250d",
+    "triggerAllTests-webdriver-uni": "npx cypress run --spec cypress/e2e/webdriver-uni/*",
+    "triggerAllTests-automation-test-store": "npx cypress run --spec cypress/e2e/automation-test-store/* --record --key 80b17d0f-3b2c-471d-8a73-6dc7dc44250d"
   },
   "author": "Vijay Salian",
   "license": "ISC",
