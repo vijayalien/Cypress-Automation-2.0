@@ -8,10 +8,6 @@ module.exports = defineConfig({
     pageLoadTimeout: 30000,
     videoUploadOnPasses: false,
     projectId: "7r1w25",
-    reporterEnabled: 'spec, mocha-junit-reporter',
-    mochaJunitReporterReporterOptions: {
-      mochaFile: 'cypress/results/junit/results-[hash].xml',
-    },
     reporter: 'cypress-multi-reporters',
     reporterOptions: {
       configFile: 'reporter-config.json',

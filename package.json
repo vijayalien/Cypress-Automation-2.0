@@ -10,7 +10,10 @@
     "triggerAllTests-dashboard": "npx cypress run --record --key 80b17d0f-3b2c-471d-8a73-6dc7dc44250d",
     "triggerAllTests-webdriver-uni": "npx cypress run --spec cypress/e2e/webdriver-uni/*",
     "triggerAllTests-automation-test-store": "npx cypress run --spec cypress/e2e/automation-test-store/* --record --key 80b17d0f-3b2c-471d-8a73-6dc7dc44250d",
-    "triggerAllTests-testDashboard": "npx cypress run --spec cypress/e2e/test/* --record --key 80b17d0f-3b2c-471d-8a73-6dc7dc44250d --tag testDashboard1"
+    "triggerAllTests-testDashboard": "npx cypress run --spec cypress/e2e/test/* --record --key 80b17d0f-3b2c-471d-8a73-6dc7dc44250d --tag testDashboard1",
+    "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
+    "delete-junit-report": "del cypress\\results\\junit\\results.xml",
+    "delete-results": "rmdir /s /q cypress\\results\\junit"
   },
   "author": "Vijay Salian",
   "license": "ISC",
@@ -19,7 +22,8 @@
     "cypress-file-upload": "^5.0.8",
     "cypress-multi-reporters": "^1.6.3",
     "mocha": "^10.2.0",
-    "mocha-junit-reporter": "^2.2.1"
+    "mocha-junit-reporter": "^2.2.1",
+    "rimraf": "^5.0.1"
   },
   "dependencies": {
     "authenticator": "^1.1.5"
