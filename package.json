@@ -4,18 +4,22 @@
   "description": "Cypress automation",
   "main": "index.js",
   "scripts": {
-    "triggerAllTests-headless":"npx cypress run",
+    "triggerAllTests-headless": "npx cypress run",
     "triggerAllTests-headed": "npx cypress run --headed",
     "triggerAllTests-chrome": "npx cypress run --browser chrome",
-    "triggerAllTests-dashboard":"npx cypress run --record --key 80b17d0f-3b2c-471d-8a73-6dc7dc44250d",
+    "triggerAllTests-dashboard": "npx cypress run --record --key 80b17d0f-3b2c-471d-8a73-6dc7dc44250d",
     "triggerAllTests-webdriver-uni": "npx cypress run --spec cypress/e2e/webdriver-uni/*",
-    "triggerAllTests-automation-test-store": "npx cypress run --spec cypress/e2e/automation-test-store/* --record --key 80b17d0f-3b2c-471d-8a73-6dc7dc44250d"
+    "triggerAllTests-automation-test-store": "npx cypress run --spec cypress/e2e/automation-test-store/* --record --key 80b17d0f-3b2c-471d-8a73-6dc7dc44250d",
+    "triggerAllTests-testDashboard": "npx cypress run --spec cypress/e2e/test/* --record --key 80b17d0f-3b2c-471d-8a73-6dc7dc44250d --tag testDashboard1"
   },
   "author": "Vijay Salian",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^12.12.0",
-    "cypress-file-upload": "^5.0.8"
+    "cypress-file-upload": "^5.0.8",
+    "cypress-multi-reporters": "^1.6.3",
+    "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.2.1"
   },
   "dependencies": {
     "authenticator": "^1.1.5"
