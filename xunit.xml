@@ -1,0 +1,5 @@
+<testsuite name="Mocha Tests" tests="3" failures="0" errors="0" skipped="0" timestamp="Mon, 07 Aug 2023 12:00:47 GMT" time="11.076">
+<testcase classname="Test contact us from via WebdriverUniversity" name="Should be able to submit successfull submission via contact us form" time="4.825"/>
+<testcase classname="Test contact us from via WebdriverUniversity" name="Should not be able to submit successfull submission via contact us form all fields required" time="1.976"/>
+<testcase classname="Test contact us from via WebdriverUniversity" name="Should be able to submit successfull submission using fixture - alias" time="4.198"/>
+</testsuite>

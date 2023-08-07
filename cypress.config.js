@@ -8,9 +8,16 @@ module.exports = defineConfig({
     pageLoadTimeout: 30000,
     videoUploadOnPasses: false,
     projectId: "7r1w25",
-    reporter: 'cypress-multi-reporters',
+    // reporter: 'cypress-multi-reporters',
+    // reporterOptions: {
+    //   configFile: 'reporter-config.json',
+    // },
+    reporter: 'mochawesome',
     reporterOptions: {
-      configFile: 'reporter-config.json',
+      reportDir: 'cypress/results/mochawesome',
+      overwrite: false,
+      html: false,
+      json: true,
     },
     // setupNodeEvents(on, config) {
     //   // implement node event listeners here
