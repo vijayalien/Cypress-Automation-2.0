@@ -16,6 +16,9 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+//Import cypress- mochawesome-report 
+import 'cypress-mochawesome-reporter/register'
+ 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
@@ -29,3 +32,4 @@ if (!app.document.head.querySelector('[data-hide-command-log-request]')) {
 
   app.document.head.appendChild(style);
 }
+
