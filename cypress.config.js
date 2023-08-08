@@ -17,7 +17,20 @@ module.exports = defineConfig({
       saveAllAttempts: false,
     },
     setupNodeEvents(on, config) {
+      //for mochawesome reports
       require('cypress-mochawesome-reporter/plugin')(on);
+
+      //for handling multiple config files
+      const fs = require('fs-extra')
+      const path = require('path')
+
+      function getConfigurationByFile(file) {
+        const pathToConfigFile = path.resolve('cypress', 'config', `${file}.json`)
+
+        return fs.readJson(pathToConfigFile)
+      }
+      const file = config.env.configFile 
+      return getConfigurationByFile(file)
     },
     // reporter: 'cypress-multi-reporters',
     // reporterOptions: {
@@ -41,4 +54,5 @@ module.exports = defineConfig({
     last_name: "Automation",
     email: "cypressauto@test.com"
   }
+
 });
