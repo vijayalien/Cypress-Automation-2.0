@@ -7,7 +7,7 @@ describe("Test contact us from via WebdriverUniversity", ()=>{
         homepage_PO.visitHomePage()
         homepage_PO.validateHomePage()
         homepage_PO.clickOnCertainPage('#contact-us')
-
+        
     })
 
     it("Should be able to submit successfull submission via contact us form", () =>{

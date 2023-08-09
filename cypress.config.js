@@ -9,6 +9,7 @@ module.exports = defineConfig({
     videoUploadOnPasses: false,
     projectId: "7r1w25",
     reporter: 'cypress-mochawesome-reporter',
+    retries:2,
     reporterOptions: {
       charts: true,
       reportPageTitle: 'Cypress Test Mochawesome Report',
