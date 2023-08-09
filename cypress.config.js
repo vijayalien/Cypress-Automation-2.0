@@ -28,6 +28,10 @@ module.exports = defineConfig({
       function getConfigurationByFile(file) {
         const pathToConfigFile = path.resolve('cypress', 'config', `${file}.json`)
 
+        if (!fs.existsSync(pathToConfigFile)) {
+          console.log("No config file found")
+          return {}
+        }
         return fs.readJson(pathToConfigFile)
       }
       const file = config.env.configFile 
