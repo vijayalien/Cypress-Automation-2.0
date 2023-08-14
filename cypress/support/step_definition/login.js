@@ -18,10 +18,10 @@ And('I click on login button',()=>{
     cy.get('#login-button').click()
 })
 
-Then('I check for validation successful message',()=>{
+Then('I check for validation message {string}',(message)=>{
 
     cy.on('window:alert', (str) => {
-        expect(str).to.contain('validation succeeded')
+        expect(str).to.contain(message)
 
     })
 })

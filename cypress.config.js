@@ -17,7 +17,7 @@ module.exports = defineConfig({
       inlineAssets: true,
       saveAllAttempts: false,
     },
-    specPattern:"**/*.feature",
+    specPattern:['cypress/e2e/**/*.feature', 'cypress/e2e/**/*.cy.js'],
     setupNodeEvents(on, config) {
 
       //for cucumber 
