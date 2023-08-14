@@ -17,10 +17,16 @@ module.exports = defineConfig({
       inlineAssets: true,
       saveAllAttempts: false,
     },
+    specPattern:"**/*.feature",
     setupNodeEvents(on, config) {
+
+      //for cucumber 
+      const cucumber = require('cypress-cucumber-preprocessor').default
+      on('file:preprocessor', cucumber())
+
       //for mochawesome reports
       require('cypress-mochawesome-reporter/plugin')(on);
-
+    
       //for handling multiple config files
       const fs = require('fs-extra')
       const path = require('path')
@@ -36,6 +42,7 @@ module.exports = defineConfig({
       }
       const file = config.env.configFile 
       return getConfigurationByFile(file)
+
     },
     // reporter: 'cypress-multi-reporters',
     // reporterOptions: {

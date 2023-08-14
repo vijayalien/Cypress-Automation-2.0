@@ -14,13 +14,14 @@
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-junit-report": "del cypress\\results\\junit\\results.xml",
     "delete-results": "rmdir /s /q cypress\\results\\junit",
-    "triggerAllTests-stagingenv":"npm run triggerAllTests-automation-test-store -- --env configFile=staging",
-    "cypress-multi-browser":"npm run triggerAllTests-stagingenv -- --browser electron --headed & npm run triggerAllTests-stagingenv -- --browser edge --headed"
+    "triggerAllTests-stagingenv": "npm run triggerAllTests-automation-test-store -- --env configFile=staging",
+    "cypress-multi-browser": "npm run triggerAllTests-stagingenv -- --browser electron --headed & npm run triggerAllTests-stagingenv -- --browser edge --headed"
   },
   "author": "Vijay Salian",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^12.12.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-file-upload": "^5.0.8",
     "cypress-mochawesome-reporter": "^3.5.1",
     "cypress-multi-reporters": "^1.6.3",
@@ -33,5 +34,9 @@
   },
   "dependencies": {
     "authenticator": "^1.1.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions":"cypress/support/step_definition"
   }
 }
