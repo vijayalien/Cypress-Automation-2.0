@@ -1,26 +1,15 @@
-name: Cypress Tests
-
-on:
-  push:
-    branches:
-      - main  # Change this to your branch name
-
+name: End to End test
+on: push
 jobs:
   cypress-run:
     name: Cypress run
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-22.04
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'  # Change this to your preferred Node.js version
-
-      - name: Install dependencies
-        run: npm install
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Cypress run
-        run: npx cypress run 
+        uses: cypress-io/github-action@v5
+        with:
+          browser: chrome
+          headed: true
