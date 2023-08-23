@@ -34,7 +34,7 @@ jobs:
         browser: chrome
         headless: true
         config-file: ${{ inputs.environment }}.json
-        working-directory: cypress/config
+        working-directory: cypress/config/
         spec: npm run ${{ inputs.script }}
 
     - name: Upload screenshots
