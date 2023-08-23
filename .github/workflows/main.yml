@@ -3,11 +3,11 @@ name: Cypress Tests
 on: 
   workflow_dispatch:
     inputs:
-      environment:
-        description: 'Environment to run tests against'    
-        required: true
-        type: string
-        default: 'staging'
+      # environment:
+      #   description: 'Environment to run tests against'    
+      #   required: true
+      #   type: string
+      #   default: 'staging'
 
       script:
         description: 'Script to run from package.json'
@@ -33,8 +33,8 @@ jobs:
       with:
         browser: chrome
         headless: true
-        config-file: ${{ inputs.environment }}.json
-        working-directory: cypress/config/
+        # config-file: ${{ inputs.environment }}.json
+        # working-directory: cypress/config/
         spec: npm run ${{ inputs.script }}
 
     - name: Upload screenshots
