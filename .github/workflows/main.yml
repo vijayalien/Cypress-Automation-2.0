@@ -26,10 +26,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Cypress run
-      uses: cypress-io/github-action@v2
+      uses: cypress-io/github-action@v5
       with:
         browser: chrome
         headless: true
@@ -38,14 +38,14 @@ jobs:
         spec: npm run ${{ inputs.script }}
 
     - name: Upload screenshots
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       if: failure()
       with:
         name: screenshots
         path: cypress/screenshots
 
     - name: Upload videos
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       if: always()  
       with:
         name: videos
