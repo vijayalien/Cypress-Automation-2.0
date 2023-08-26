@@ -9,11 +9,11 @@ on:
       #   type: string
       #   default: 'staging'
 
-      script:
-        description: 'Script to run from package.json'
-        required: true
-        type: string
-        default: 'triggerAllTests-headless' 
+      # script:
+      #   description: 'Script to run from package.json'
+      #   required: true
+      #   type: string
+      #   default: 'triggerAllTests-headless' 
 
 jobs:
 
@@ -37,7 +37,7 @@ jobs:
         parallel: true
         # config-file: ${{ inputs.environment }}.json
         # working-directory: cypress/config/
-        command: npm run ${{ inputs.script }}
+        # command: npm run ${{ inputs.script }}
       env:
           # pass the Cypress Cloud record key as an environment variable
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
