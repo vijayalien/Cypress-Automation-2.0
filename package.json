@@ -13,7 +13,7 @@
     "triggerAllTests-testDashboard": "npx cypress run --spec cypress/e2e/test/* --record --key 80b17d0f-3b2c-471d-8a73-6dc7dc44250d --tag testDashboard1",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-junit-report": "del cypress\\results\\junit\\results.xml",
-    "triggerAllTests-automation-test-store-parallel": "npx cypress run --spec cypress/e2e/automation-test-store/* --record --parallel",
+    "triggerAllTests-automation-test-store-parallel": "npx cypress run --spec cypress/e2e/automation-test-store/* --record",
     "delete-results": "rmdir /s /q cypress\\results\\junit",
     "triggerAllTests-stagingenv": "npm run triggerAllTests-automation-test-store -- --env configFile=staging",
     "cypress-multi-browser": "npm run triggerAllTests-stagingenv -- --browser electron --headed & npm run triggerAllTests-stagingenv -- --browser edge --headed"
