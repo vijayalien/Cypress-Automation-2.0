@@ -3,11 +3,11 @@ name: Cypress Parallel Tests New
 on: 
   workflow_dispatch:
     inputs:
-      environment:
-        description: 'Environment to run tests against'    
-        required: true
-        type: string
-        default: 'staging'
+      # environment:
+      #   description: 'Environment to run tests against'    
+      #   required: true
+      #   type: string
+      #   default: 'staging'
 
       script:
         description: 'Script to run from package.json'
@@ -35,8 +35,8 @@ jobs:
         headless: true
         record: true
         parallel: true
-        config-file: ${{ inputs.environment }}.json
-        working-directory: cypress/config/
+        # config-file: ${{ inputs.environment }}.json
+        # working-directory: cypress/config/
         command: npm run ${{ inputs.script }}
       env:
           # pass the Cypress Cloud record key as an environment variable
