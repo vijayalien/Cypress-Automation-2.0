@@ -31,10 +31,10 @@ jobs:
     - name: Cypress run
       uses: cypress-io/github-action@v5
       with:
-        browser: chrome
-        headless: true
-        record: true
-        parallel: true
+        # browser: chrome
+        # headless: true
+        # record: true
+        # parallel: true
         # config-file: ${{ inputs.environment }}.json
         # working-directory: cypress/config/
         command: npm run ${{ inputs.script }}
