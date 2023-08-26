@@ -7,7 +7,7 @@ module.exports = defineConfig({
     defaultCommandTimeout: 3000,
     pageLoadTimeout: 30000,
     videoUploadOnPasses: false,
-    projectId: "7r1w25",
+    // projectId: "7r1w25",
     reporter: 'cypress-mochawesome-reporter',
     retries:2,
     reporterOptions: {
